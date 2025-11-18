@@ -3,7 +3,7 @@
 @using BadNews.Elevation
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @model BadNews.Models.News.FullArticleModel
-@(await Html.RenderComponentAsync<Comments>(RenderMode.ServerPrerendered))
+
 
 
 <main role="main" class="container">
@@ -23,6 +23,8 @@
                 }
                 @Html.Raw(Model.Article.ContentHtml)
                 <div id="comments" />
+                
+                @(await Html.RenderComponentAsync<Comments>(RenderMode.ServerPrerendered))
             </div>
         </div>
 
